@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Your Healthy Foods</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" href="../public/logo.png" />
+  </head>
+  <body>
+    <div class="tm-container">
+      <div class="tm-row">
+        <!-- Site Header -->
+        <div class="tm-left">
+          <div class="tm-left-inner">
+            <div class="tm-site-header">
+              <i class="fa-solid fa-wallet fa-3x tm-site-logo"></i>
+              <h1 class="tm-site-name">Payment process</h1>
+            </div>
+            <!-- <nav class="tm-site-nav">
+              <ul class="tm-site-nav-ul">
+                <li class="tm-page-nav-item">
+                  <a href="#menu" class="tm-page-link active">
+                    <i class="fas fa-mug-hot tm-page-link-icon"></i>
+                    <span>Menu</span>
+                  </a>
+                </li>
+                <li class="tm-page-nav-item" id="tm-page-noti">
+                  <a href="#shopping-cart" class="tm-page-link">
+                    <i class="fas fa-cart-shopping tm-page-link-icon"></i>
+                    <span>Shopping Cart</span>
+                  </a>
+                  <span>0</span>
+                </li>
+                <li class="tm-page-nav-item">
+                  <a href="#about" class="tm-page-link">
+                    <i class="fas fa-users tm-page-link-icon"></i>
+                    <span>Manage Product</span>
+                  </a>
+                </li>
+                <li class="tm-page-nav-item">
+                  <a href="#contact" class="tm-page-link">
+                    <i class="fas fa-comments tm-page-link-icon"></i>
+                    <span>Contact</span>
+                  </a>
+                </li>
+              </ul>
+            </nav> -->
+            <div class="container">
+              <div class="tm-food-info">
+                <div class="input-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    required />
+                </div>
+                <div class="input-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" />
+                </div>
+                <div class="input-group">
+                  <label for="number">Contact number</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="number"
+                    required />
+                </div>
+                <div class="input-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required />
+                </div>
+                <div class="input-group">
+                  <label for="pcode">Post code</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pcode"
+                    required />
+                </div>
+              </div>
+              <div class="tm-list-item-name">
+                <a href="homepage.html" class="tm-btn-primary tm-align-right order">
+                  Order
+                </a>
+                <a href="homepage.html" class="tm-btn-primary tm-align-right order">
+                  Back
+                </a>
+              </div>
+            </div>
+            <div class="tm-site-footer">
+              <div class="tm-black-bg tm-footer-text">
+                &copy; Copyright by Group 5 - 2024
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tm-right">
+          <main class="tm-main">
+            <!-- Menu Page -->
+            <div id="menu" class="tm-page-content">
+              <div class="tm-black-bg tm-menu-bar">
+                <p class="tm-menu-title">Healthy Foods Menu</p>
+                <input
+                  type="text"
+                  class="tm-menu-title"
+                  placeholder="Search..." />
+              </div>
+
+              <div class="tm-tab-content">
+                <div class="tm-list"></div>
+              </div>
+            </div>
+            <!-- end Menu Page -->
+
+            <!-- Shopping Cart Page -->
+            <div>
+              <div class="cart-display"></div>
+            </div>
+            <!-- end Shopping Cart Page -->
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../menu-api.js"></script>
+    <script src="../manage.js"></script>
+    <script src="../transition.js"></script>
+  </body>
+</html>

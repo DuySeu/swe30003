@@ -1,0 +1,67 @@
+{
+  "food": [
+    {
+      "food_name": "cusorr",
+      "price": "29",
+      "description": "Delicious and savory pasta dish with a creamy sauce",
+      "image": "../public/img/special-02.jpg",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "food_name": "pasta",
+      "description": "Cheesy and gooey pizza with all your favorite toppings",
+      "price": "28",
+      "image": "../public/img/iced-americano.png"
+    },
+    {
+      "food_name": "sandwich",
+      "price": "19",
+      "description": "Sweet and tangy lemonade with a hint of mint",
+      "image": "../public/img/hot-americano.png",
+      "id": "4"
+    },
+    {
+      "food_name": "sandwich",
+      "price": "50",
+      "description": "Fluffy and light pancakes drizzled with maple syrup",
+      "image": "../public/img/special-06.jpg",
+      "id": "5"
+    },
+    {
+      "food_name": "ice-latte",
+      "price": "42.25",
+      "description": "Juicy and tender steak cooked to perfection",
+      "image": "../public/img/iced-latte.png",
+      "id": "6"
+    },
+    {
+      "food_name": "ramen",
+      "price": "18.25",
+      "description": "Zesty and flavorful tacos with all the toppings",
+      "image": "../public/img/special-05.jpg",
+      "id": "7"
+    },
+    {
+      "food_name": "burger",
+      "price": "22.50",
+      "description": "Rich and decadent chocolate cake with a velvety frosting",
+      "image": "../public/img/special-03.jpg",
+      "id": "8"
+    },
+    {
+      "food_name": "sandwich",
+      "price": "19",
+      "description": "Delicious and savory pasta dish with a creamy sauce",
+      "image": "../public/img/hot-americano.png",
+      "id": "9"
+    },
+    {
+      "food_name": "Latte",
+      "price": "44",
+      "description": "delicous",
+      "image": "../public/img/hot-latte.png",
+      "id": "90fb"
+    }
+  ]
+}
