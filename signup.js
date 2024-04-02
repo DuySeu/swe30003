@@ -59,7 +59,7 @@ registerBtn.addEventListener("click", (e) => {
 const getUser = async () => {
     const response = await fetch(apiUser);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
 };
   
@@ -75,7 +75,7 @@ const getUser = async () => {
           (user) =>
             user.email == loginEmail.value && user.password == loginPassword.value
         );
-        console.log(user);
+        // console.log(user);
         if (user) {
           alert("Login success");
           window.location.href = "src/homepage.html";

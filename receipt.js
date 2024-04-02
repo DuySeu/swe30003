@@ -1,25 +1,11 @@
 let listProduct = document.querySelector(".product-display");
-let cart = [];
-
 let menu_url = "http://localhost:3000/food";
-
-const initApp = () => {
-  // get data product
-  fetch(menu_url)
-    .then((response) => response.json())
-    .then((data) => {
-      products = data;
-      // get data cart from memory
-      cart = JSON.parse(localStorage.getItem("cart"));
-      addCartToHTML();
-    })
-    .catch((error) => console.error("Error fetching JSON:", error));
-};
-initApp();
+let cart = [];
 
 const addCartToHTML = () => {
   listProduct.innerHTML = "";
   let totalQuantity = 0;
+  let totalPrice = 0; // Initialize total price
   if (cart.length > 0) {
     cart.forEach((item) => {
       totalQuantity = totalQuantity + item.quantity;
@@ -47,49 +33,68 @@ const addCartToHTML = () => {
             </div>
             `;
       listProduct.appendChild(productItem);
+
+      totalPrice += info.price * item.quantity; // Calculate total price
     });
   }
-  iconCartSpan.innerText = totalQuantity;
+
+  // Update the total-bill element with the total price
+  document.querySelector(
+    ".total-bill"
+  ).textContent = `Total Bill: $${totalPrice.toFixed(2)}`;
 };
 
-// listProduct.addEventListener("click", (event) => {
-//   let positionClick = event.target;
-//   if (
-//     positionClick.classList.contains("minus") ||
-//     positionClick.classList.contains("plus")
-//   ) {
-//     let product_id = positionClick.parentElement.parentElement.dataset.id;
-//     // console.log(product_id);
-//     let type = "minus";
-//     if (positionClick.classList.contains("plus")) {
-//       type = "plus";
-//     }
-//     changeQuantityCart(product_id, type);
-//   }
-// });
+listProduct.addEventListener("click", (event) => {
+  let positionClick = event.target;
+  if (
+    positionClick.classList.contains("minus") ||
+    positionClick.classList.contains("plus")
+  ) {
+    let product_id = positionClick.parentElement.parentElement.dataset.id;
+    // console.log(product_id);
+    let type = "minus";
+    if (positionClick.classList.contains("plus")) {
+      type = "plus";
+    }
+    changeQuantityCart(product_id, type);
+  }
+});
 
-// const changeQuantityCart = (product_id, type) => {
-//   let positionItemInCart = cart.findIndex(
-//     (value) => value.product_id == product_id
-//   );
-//   if (positionItemInCart >= 0) {
-//     let info = cart[positionItemInCart];
-//     switch (type) {
-//       case "plus":
-//         cart[positionItemInCart].quantity =
-//           cart[positionItemInCart].quantity + 1;
-//         break;
+const changeQuantityCart = (product_id, type) => {
+  let positionItemInCart = cart.findIndex(
+    (value) => value.product_id == product_id
+  );
+  if (positionItemInCart >= 0) {
+    let qtyInfo = cart[positionItemInCart];
+    switch (type) {
+      case "plus":
+        qtyInfo.quantity = qtyInfo.quantity + 1;
+        break;
 
-//       default:
-//         let changeQuantity = cart[positionItemInCart].quantity - 1;
-//         if (changeQuantity > 0) {
-//           cart[positionItemInCart].quantity = changeQuantity;
-//         } else {
-//           cart.splice(positionItemInCart, 1);
-//         }
-//         break;
-//     }
-//   }
-//   addCartToHTML();
-//   addCartToMemory();
-// };
+      default:
+        let changeQuantity = qtyInfo.quantity - 1;
+        if (changeQuantity > 0) {
+          qtyInfo.quantity = changeQuantity;
+        } else {
+          cart.splice(positionItemInCart, 1);
+        }
+        break;
+    }
+  }
+  addCartToHTML();
+  addCartToMemory();
+};
+
+const initApp = () => {
+  // get data product
+  fetch(menu_url)
+    .then((response) => response.json())
+    .then((data) => {
+      products = data;
+      // get data cart from memory
+      cart = JSON.parse(localStorage.getItem("cart"));
+      addCartToHTML();
+    })
+    .catch((error) => console.error("Error fetching JSON:", error));
+};
+initApp();

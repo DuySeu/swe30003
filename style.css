@@ -360,7 +360,7 @@ button {
   font-size: 1.4rem;
 }
 .cart-empty,
-.order {
+.order, .total-bill {
   text-align: center;
   margin: 0 200px;
   color: white;
