@@ -5,4 +5,4 @@ git pull
 # run json server: 
 json-server --watch swe.json
 # run web: 
-npm run start
+npx npm run dev

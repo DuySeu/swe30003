@@ -11,23 +11,23 @@
 <body>
     <div class="container" id="signup" style="display:none;">
       <h1 class="form-title">Register</h1>
-      <form method="post" action="register.php">
+      <form method="post">
         <div class="input-group">
            <i class="fas fa-user"></i>
-           <input class="inputEl" type="text" name="fName" id="fName" placeholder="Full Name" required>
-           <label class="tag-name" for="fname">Full Name</label>
+           <input class="inputEl username" type="text" id="username" placeholder="User Name" required>
+           <label class="tag-name" for="username">User Name</label>
         </div>
         <div class="input-group">
             <i class="fas fa-envelope"></i>
-            <input class="inputEl" type="email" name="email" id="email" placeholder="Email" required>
-            <label class="tag-name" for="email">Email</label>
+            <input class="inputEl mail" type="email" id="mail" placeholder="Email" required>
+            <label class="tag-name" for="mail">Email</label>
         </div>
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input class="inputEl" type="password" id="password" placeholder="Password" required>
-            <label class="tag-name" for="password">Password</label>
+            <input class="inputEl password" type="password" id="pwd" placeholder="Password" required>
+            <label class="tag-name" for="pwd">Password</label>
         </div>
-       <input type="submit" class="btn" value="Sign Up" name="signUp">
+       <button type="submit" class="btn" id="signUpbtn">SignUp</button>
       </form>
       <div class="links">
         <p>Already Have Account?</p>
@@ -40,15 +40,15 @@
         <form action="">
           <div class="input-group">
               <i class="fas fa-envelope"></i>
-              <input class="inputEl" type="email" name="email" id="email" placeholder="Email" required>
+              <input type="text" class="inputEl login-email" id="email" placeholder="Email" required>
               <label class="tag-name" for="email">Email</label>
           </div>
           <div class="input-group">
               <i class="fas fa-lock"></i>
-              <input class="inputEl" type="password" id="password" placeholder="Password" required>
+              <input type="password" class="inputEl login-pwd" id="password" placeholder="Password" required>
               <label class="tag-name" for="password">Password</label>
           </div>
-         <input type="submit" class="btn" value="Sign In" name="signIn" onclick="auth()">
+         <button type="submit" class="btn" id="signInbtn">Login</button>
         </form>
         <div class="links">
           <p>Don't have account yet?</p>

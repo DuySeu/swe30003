@@ -95,9 +95,11 @@ const addCartToHTML = () => {
   if (cart.length === 0) {
     cartEmpty.style.display = "block"; // Show the <p> element
     order.style.display = "none"; // Hide the <a> element
+    iconCartSpan.style.display = "none"; // Hide the <a> element
   } else {
     cartEmpty.style.display = "none"; // Hide the <p> element
     order.style.display = "block"; // Show the <a> element
+    iconCartSpan.style.display = "flex"; // Show the <a> element
   }
 };
 

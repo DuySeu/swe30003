@@ -50,7 +50,7 @@
       "id": "8"
     },
     {
-      "food_name": "sandwich",
+      "food_name": "coffee",
       "price": "19",
       "description": "Delicious and savory pasta dish with a creamy sauce",
       "image": "../public/img/hot-americano.png",
@@ -58,10 +58,42 @@
     },
     {
       "food_name": "Latte",
-      "price": "44",
+      "price": "4",
       "description": "delicous",
       "image": "../public/img/hot-latte.png",
       "id": "90fb"
+    }
+  ],
+  "account": [
+    {
+      "id": "c54d",
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "shopping_cart": [
+        {
+          "food_name": "cusorr",
+          "price": "29",
+          "description": "Delicious and savory pasta dish with a creamy sauce",
+          "image": "../public/img/special-02.jpg",
+          "product_id": "1",
+          "quantity": "1"
+        }
+      ]
+    },
+    {
+      "id": "06ba",
+      "username": "DuySeu",
+      "email": "nguyenquocduy0207@gmail.com",
+      "password": "12345",
+      "shopping_cart": []
+    },
+    {
+      "id": "0afa",
+      "username": "test",
+      "email": "test@gmail.cpm",
+      "password": "test",
+      "shopping_cart": []
     }
   ]
 }
