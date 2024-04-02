@@ -1,8 +1,14 @@
 let listProduct = document.querySelector(".product-display");
+const createInvoice = document.querySelector(".bill");
+var fullname = document.querySelector(".fullname");
+var address = document.querySelector(".address");
+var number = document.querySelector(".number");
+var email = document.querySelector(".email");
+var postcode = document.querySelector(".postcode");
 let menu_url = "http://localhost:3000/food";
 let cart = [];
 
-const addCartToHTML = () => {
+const bill = () => {
   listProduct.innerHTML = "";
   let totalQuantity = 0;
   let totalPrice = 0; // Initialize total price
@@ -17,7 +23,7 @@ const addCartToHTML = () => {
         (value) => value.id == item.product_id
       );
       let info = products[positionProduct];
-      console.log(item);
+      // console.log(item);
       productItem.innerHTML = `
             <img src="../${info.image}" alt="Image" class="tm-list-item-img"/>
             <h2 class="tm-special-item-title">
@@ -81,11 +87,39 @@ const changeQuantityCart = (product_id, type) => {
         break;
     }
   }
-  addCartToHTML();
+  bill();
   addCartToMemory();
 };
 
-const initApp = () => {
+createInvoice.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (fullname.value == "" || address.value == "" || number.value == "" || email.value == "" || postcode.value == "") {
+    alert("Please enter the receipt form");
+  } else {
+    const invoice = {
+      name: fullname.value,
+      address: address.value,
+      number: number.value,
+      email: email.value,
+      postcode: postcode.value,
+      shopping_cart: cart,
+    };
+    fetch("http://localhost:3000/invoice", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(invoice),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        window.location.href = "invoice.html";
+      });
+  }
+});
+
+const getBill = () => {
   // get data product
   fetch(menu_url)
     .then((response) => response.json())
@@ -93,8 +127,8 @@ const initApp = () => {
       products = data;
       // get data cart from memory
       cart = JSON.parse(localStorage.getItem("cart"));
-      addCartToHTML();
+      bill();
     })
     .catch((error) => console.error("Error fetching JSON:", error));
 };
-initApp();
+getBill();
