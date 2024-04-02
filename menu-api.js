@@ -95,9 +95,11 @@ const addCartToHTML = () => {
   if (cart.length === 0) {
     cartEmpty.style.display = "block"; // Show the <p> element
     order.style.display = "none"; // Hide the <a> element
+    iconCartSpan.style.display = "none"; // Hide the <a> element
   } else {
     cartEmpty.style.display = "none"; // Hide the <p> element
     order.style.display = "block"; // Show the <a> element
+    iconCartSpan.style.display = "flex"; // Show the <a> element
   }
 };
 
@@ -122,16 +124,16 @@ const changeQuantityCart = (product_id, type) => {
     (value) => value.product_id == product_id
   );
   if (positionItemInCart >= 0) {
-    let qtyInfo = cart[positionItemInCart];
     switch (type) {
       case "plus":
-        qtyInfo.quantity = qtyInfo.quantity + 1;
+        cart[positionItemInCart].quantity =
+          cart[positionItemInCart].quantity + 1;
         break;
 
       default:
-        let changeQuantity = qtyInfo.quantity - 1;
+        let changeQuantity = cart[positionItemInCart].quantity - 1;
         if (changeQuantity > 0) {
-          info.quantity = changeQuantity;
+          cart[positionItemInCart].quantity = changeQuantity;
         } else {
           cart.splice(positionItemInCart, 1);
         }
