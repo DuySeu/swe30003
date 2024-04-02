@@ -11,90 +11,93 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="icon" href="../public/logo.png" />
   </head>
-  <body>
-    <div class="tm-container">
-      <div class="tm-row">
-        <!-- Site Header -->
-        <div class="tm-left">
-          <div class="tm-left-inner">
-            <div class="tm-site-header">
-              <i class="fa-solid fa-wallet fa-3x tm-site-logo"></i>
-              <h1 class="tm-site-name">Payment process</h1>
-            </div>
-            <div class="container">
-              <div class="tm-food-info">
-                <div class="input-group">
-                  <label for="name">Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    required />
-                </div>
-                <div class="input-group">
-                  <label for="address">Address</label>
-                  <input type="text" class="form-control" id="address" />
-                </div>
-                <div class="input-group">
-                  <label for="number">Contact number</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="number"
-                    required />
-                </div>
-                <div class="input-group">
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    required />
-                </div>
-                <div class="input-group">
-                  <label for="pcode">Post code</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="pcode"
-                    required />
-                </div>
-              </div>
-              <div class="tm-list-item-name">
-                <a href="invoice.html" class="tm-btn-primary tm-align-right order">
-                  Order
-                </a>
-                <a href="homepage.html" class="tm-btn-primary tm-align-right order">
-                  Back
-                </a>
-              </div>
-            </div>
-            <div class="tm-site-footer">
-              <div class="tm-black-bg tm-footer-text">
-                &copy; Copyright by Group 5 - 2024
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tm-right">
-          <main class="tm-main">
-            <!-- Shopping Cart Page -->
-            <div id="shopping-cart" class="tm-page-content">
-              <div class="product-display"></div>
-              <div class="tm-black-bg tm-cart-box">
-                <h4 class="total-bill"></h4>
-              </div>
-            </div>
-            <!-- end Shopping Cart Page -->
-          </main>
-        </div>
-      </div>
-    </div>
 
-    <script src="../js/jquery-3.4.1.min.js"></script>
-    <!-- <script src="../menu-api.js"></script> -->
-    <!-- <script src="../manage.js"></script> -->
-    <!-- <script src="../transition.js"></script> -->
-    <script src="../receipt.js"></script>
+  <body>
+    <div class="invoice-box">
+      <table>
+        <tr class="top">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td class="title">
+                  <img
+                    src="../public/logo.png"
+                    alt="Company logo"
+                    style="width: 100%; max-width: 150px" />
+                </td>
+
+                <td>
+                  Invoice #: 123<br />
+                  Created: January 1, 2023<br />
+                  Due: February 1, 2023
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr class="information">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td>
+                  Sparksuite, Inc.<br />
+                  12345 Sunny Road<br />
+                  Sunnyville, TX 12345
+                </td>
+
+                <td>
+                  Acme Corp.<br />
+                  John Doe<br />
+                  john@example.com
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr class="heading">
+          <td>Payment Method</td>
+
+          <td>Check #</td>
+        </tr>
+
+        <tr class="details">
+          <td>Check</td>
+
+          <td>1000</td>
+        </tr>
+
+        <tr class="heading">
+          <td>Item</td>
+
+          <td>Price</td>
+        </tr>
+
+        <tr class="item">
+          <td>Website design</td>
+
+          <td>$300.00</td>
+        </tr>
+
+        <tr class="item">
+          <td>Hosting (3 months)</td>
+
+          <td>$75.00</td>
+        </tr>
+
+        <tr class="item">
+          <td>Domain name (1 year)</td>
+
+          <td>$10.00</td>
+        </tr>
+
+        <tr class="total">
+          <td></td>
+
+          <td>Total: $385.00</td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>

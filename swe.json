@@ -95,5 +95,15 @@
       "password": "test",
       "shopping_cart": []
     }
+  ],
+  "invoice": [
+    {
+      "id": "c54d",
+      "name": "Admin",
+      "address": "HaNoi",
+      "number": "0941920239",
+      "email": "admin@gmail.com",
+      "postcode": "1000"
+    }
   ]
 }
