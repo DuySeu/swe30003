@@ -83,7 +83,7 @@ createInvoice.addEventListener("click", (e) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // window.location.href = "invoice.html";
+        window.location.href = "invoice.html";
       });
   }
 });

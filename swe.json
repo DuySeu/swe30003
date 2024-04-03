@@ -72,10 +72,6 @@
       "password": "12345",
       "shopping_cart": [
         {
-          "food_name": "cusorr",
-          "price": "29",
-          "description": "Delicious and savory pasta dish with a creamy sauce",
-          "image": "../public/img/special-02.jpg",
           "product_id": "1",
           "quantity": 1
         }
@@ -376,6 +372,60 @@
         },
         {
           "product_id": "6",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "78b9",
+      "name": "nguyen quoc duy",
+      "address": "asdadas",
+      "number": "0941920239",
+      "email": "admin@gmail.com",
+      "postcode": "1000",
+      "timestamp": "03/04/2024",
+      "shopping_cart": [
+        {
+          "product_id": "1",
+          "quantity": 2
+        },
+        {
+          "product_id": "2",
+          "quantity": 2
+        },
+        {
+          "product_id": "4",
+          "quantity": 2
+        },
+        {
+          "product_id": "5",
+          "quantity": 1
+        },
+        {
+          "product_id": "6",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "3afd",
+      "name": "Nguyen Quoc Duy",
+      "address": "Aeon Mall HaNoi",
+      "number": "0941920239",
+      "email": "nguyenquocduy0207@gmail.com",
+      "postcode": "1000",
+      "timestamp": "03/04/2024",
+      "shopping_cart": [
+        {
+          "product_id": "1",
+          "quantity": 1
+        },
+        {
+          "product_id": "5",
+          "quantity": 1
+        },
+        {
+          "product_id": "8",
           "quantity": 1
         }
       ]
