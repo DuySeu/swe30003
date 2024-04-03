@@ -18,29 +18,25 @@ const bill = () => {
       let productItem = document.createElement("div");
       productItem.className = "tm-black-bg tm-special-item";
       productItem.dataset.id = item.product_id;
-
       let positionProduct = products.findIndex(
         (value) => value.id == item.product_id
       );
-      let info = products[positionProduct];
+      let billInfo = products[positionProduct];
       // console.log(item);
       productItem.innerHTML = `
-            <img src="../${info.image}" alt="Image" class="tm-list-item-img"/>
+            <img src="../${
+              billInfo.image
+            }" alt="Image" class="tm-list-item-img"/>
             <h2 class="tm-special-item-title">
-              ${info.food_name}
+              ${billInfo.food_name}
             </h2>
             <h2 class="tm-text-primary tm-special-item-title">
-              $${info.price * item.quantity}
+              $${billInfo.price * item.quantity}
             </h2>
-            <div class="tm-special-item-title">
-              <i class="fa-solid fa-minus minus"></i>
-              <span class="tm-text-primary">${item.quantity}</span>
-              <i class="fa-solid fa-plus plus"></i>
-            </div>
             `;
       listProduct.appendChild(productItem);
 
-      totalPrice += info.price * item.quantity; // Calculate total price
+      totalPrice += billInfo.price * item.quantity; // Calculate total price
     });
   }
 
@@ -50,58 +46,31 @@ const bill = () => {
   ).textContent = `Total Bill: $${totalPrice.toFixed(2)}`;
 };
 
-listProduct.addEventListener("click", (event) => {
-  let positionClick = event.target;
-  if (
-    positionClick.classList.contains("minus") ||
-    positionClick.classList.contains("plus")
-  ) {
-    let product_id = positionClick.parentElement.parentElement.dataset.id;
-    // console.log(product_id);
-    let type = "minus";
-    if (positionClick.classList.contains("plus")) {
-      type = "plus";
-    }
-    changeQuantityCart(product_id, type);
-  }
-});
-
-const changeQuantityCart = (product_id, type) => {
-  let positionItemInCart = cart.findIndex(
-    (value) => value.product_id == product_id
-  );
-  if (positionItemInCart >= 0) {
-    let qtyInfo = cart[positionItemInCart];
-    switch (type) {
-      case "plus":
-        qtyInfo.quantity = qtyInfo.quantity + 1;
-        break;
-
-      default:
-        let changeQuantity = qtyInfo.quantity - 1;
-        if (changeQuantity > 0) {
-          qtyInfo.quantity = changeQuantity;
-        } else {
-          cart.splice(positionItemInCart, 1);
-        }
-        break;
-    }
-  }
-  bill();
-  addCartToMemory();
-};
-
 createInvoice.addEventListener("click", (e) => {
   e.preventDefault();
-  if (fullname.value == "" || address.value == "" || number.value == "" || email.value == "" || postcode.value == "") {
+  if (
+    fullname.value == "" ||
+    address.value == "" ||
+    number.value == "" ||
+    email.value == "" ||
+    postcode.value == ""
+  ) {
     alert("Please enter the receipt form");
   } else {
+    const formatDate = (date) => {
+      const day = date.getDate().toString().padStart(2, "0");
+      const month = (date.getMonth() + 1).toString().padStart(2, "0");
+      const year = date.getFullYear();
+      return `${day}/${month}/${year}`;
+    };
+    const formattedDate = formatDate(new Date());
     const invoice = {
       name: fullname.value,
       address: address.value,
       number: number.value,
       email: email.value,
       postcode: postcode.value,
+      // timestamp: formattedDate,
       shopping_cart: cart,
     };
     fetch("http://localhost:3000/invoice", {

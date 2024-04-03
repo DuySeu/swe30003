@@ -3,6 +3,6 @@
 # pull code: 
 git pull
 # run json server: 
-json-server --watch swe.json
+npx json-server --watch swe.json
 # run web: 
-npx npm run dev
+npm run dev

@@ -75,9 +75,10 @@ const getUser = async () => {
           (user) =>
             user.email == loginEmail.value && user.password == loginPassword.value
         );
-        // console.log(user);
+        console.log(user);
         if (user) {
           alert("Login success");
+          localStorage.setItem('userData', JSON.stringify(user));
           window.location.href = "src/homepage.html";
         } else {
           alert("Login failed");

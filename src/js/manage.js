@@ -100,7 +100,6 @@ function editFood(e) {
     foodPic.src = selectedFood.image;
     imageName = selectedFood.image.split("/").pop(); // Extract imageName from the image path
     console.log(imageName);
-    // image.value = `../public/img/${imageName}`;
   }
 }
 

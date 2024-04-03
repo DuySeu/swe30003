@@ -77,7 +77,7 @@
           "description": "Delicious and savory pasta dish with a creamy sauce",
           "image": "../public/img/special-02.jpg",
           "product_id": "1",
-          "quantity": "1"
+          "quantity": 1
         }
       ]
     },
@@ -106,12 +106,8 @@
       "postcode": "1000",
       "shopping_cart": [
         {
-          "food_name": "cusorr",
-          "price": "29",
-          "description": "Delicious and savory pasta dish with a creamy sauce",
-          "image": "../public/img/special-02.jpg",
           "product_id": "1",
-          "quantity": "1"
+          "quantity": 1
         }
       ]
     },
@@ -129,6 +125,204 @@
         },
         {
           "product_id": "4",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1076",
+      "name": "duy",
+      "address": "abc",
+      "number": "12345",
+      "email": "admin@gmail.com",
+      "postcode": "1223",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 4
+        },
+        {
+          "product_id": "4",
+          "quantity": 4
+        },
+        {
+          "product_id": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "9f52",
+      "name": "DuySeu",
+      "address": "12313",
+      "number": "12312312",
+      "email": "admin@gmail.com",
+      "postcode": "1111",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 2
+        },
+        {
+          "product_id": "4",
+          "quantity": 2
+        },
+        {
+          "product_id": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "2b0f",
+      "name": "DuySeu",
+      "address": "12345",
+      "number": "1234",
+      "email": "admin@gmail.com",
+      "postcode": "1111",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 2
+        },
+        {
+          "product_id": "4",
+          "quantity": 2
+        },
+        {
+          "product_id": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "890f",
+      "name": "DuySeu",
+      "address": "12345",
+      "number": "1234",
+      "email": "admin@gmail.com",
+      "postcode": "1111",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 2
+        },
+        {
+          "product_id": "4",
+          "quantity": 2
+        },
+        {
+          "product_id": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "aa26",
+      "name": "DuySeu",
+      "address": "123",
+      "number": "321",
+      "email": "admin@gmail.com",
+      "postcode": "1111",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 2
+        },
+        {
+          "product_id": "4",
+          "quantity": 2
+        },
+        {
+          "product_id": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "ace5",
+      "name": "DuySeu",
+      "address": "123",
+      "number": "321",
+      "email": "admin@gmail.com",
+      "postcode": "1111",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 2
+        },
+        {
+          "product_id": "4",
+          "quantity": 2
+        },
+        {
+          "product_id": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "50ea",
+      "name": "DuySeu",
+      "address": "123",
+      "number": "321",
+      "email": "admin@gmail.com",
+      "postcode": "1111",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 2
+        },
+        {
+          "product_id": "4",
+          "quantity": 2
+        },
+        {
+          "product_id": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "67e2",
+      "name": "DuySeu",
+      "address": "222",
+      "number": "331",
+      "email": "admin@gmail.com",
+      "postcode": "1111",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 2
+        },
+        {
+          "product_id": "4",
+          "quantity": 2
+        },
+        {
+          "product_id": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "ba3c",
+      "name": "DuySeu",
+      "address": "bla bla",
+      "number": "123456789",
+      "email": "admin@gmail.com",
+      "postcode": "10000",
+      "shopping_cart": [
+        {
+          "product_id": "2",
+          "quantity": 1
+        },
+        {
+          "product_id": "4",
+          "quantity": 1
+        },
+        {
+          "product_id": "1",
           "quantity": 1
         }
       ]
