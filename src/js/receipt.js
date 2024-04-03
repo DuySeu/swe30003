@@ -71,7 +71,11 @@ createInvoice.addEventListener("click", (e) => {
       email: email.value,
       postcode: postcode.value,
       timestamp: formattedDate,
-      shopping_cart: cart,
+      shopping_cart: cart.map(item => ({
+        food_name: products.find(product => product.id === item.product_id).food_name,
+        price: products.find(product => product.id === item.product_id).price,
+        quantity: item.quantity,
+      })),
     };
     fetch("http://localhost:3000/invoice", {
       method: "POST",

@@ -380,41 +380,6 @@ button {
   margin-bottom: 20px;
 }
 
-.tm-contact-form-container {
-  max-width: 460px;
-  padding: 40px 50px;
-  box-sizing: border-box;
-}
-
-.tm-form-group {
-  margin-bottom: 25px;
-}
-
-.tm-form-control {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 15px;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #fff;
-  background-color: transparent;
-  background-clip: padding-box;
-  border: 0;
-  border-bottom: 1px solid white;
-}
-
-.tm-form-control::-webkit-input-placeholder {
-  color: white;
-} /* Edge */
-.tm-form-control:-ms-input-placeholder {
-  color: white;
-} /* Internet Explorer 10-11 */
-.tm-form-control::placeholder {
-  color: white;
-}
-
 .tm-btn-primary {
   color: #099;
   background-color: white;
