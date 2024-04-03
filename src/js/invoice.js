@@ -1,15 +1,17 @@
+let invoice = [];
+let products = [];
 let latestInvoice = [];
 
 const displayInvoice = () => {
   document.querySelector(
     ".user-invoice-1"
   ).innerHTML = `Invoice #: ${latestInvoice.id}<br />
-                    Date: 
+                    Date: ${latestInvoice.timestamp}
                     `;
   document.querySelector(
     ".user-invoice-2"
-  ).innerHTML = `${latestInvoice.address}<br />
-                    ${latestInvoice.postcode}
+  ).innerHTML = `Address: ${latestInvoice.address}<br />
+                 Postcode: ${latestInvoice.postcode}
                     `;
   document.querySelector(
     ".user-invoice-3"
@@ -17,11 +19,9 @@ const displayInvoice = () => {
                     ${latestInvoice.email}<br />
                     ${latestInvoice.number}
                     `;
-  //   invoiceProduct.innerHTML = "";
   let totalQuantity = 0;
   let totalPrice = 0; // Initialize total price
   if (latestInvoice.shopping_cart.length > 0) {
-    const table = document.querySelector(".invoice-box table"); // Select the table
     latestInvoice.shopping_cart.forEach((item) => {
       totalQuantity += item.quantity;
       let positionProduct = products.findIndex(
