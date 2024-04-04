@@ -1,41 +1,54 @@
 let quantity = [];
 let product_name = [];
-const barColors = ["red", "green", "blue", "orange", "brown"];
-let totalQuantity = 0;
+let barColors = [];
+let quantityPerFood = {};
 
 const displayStatistic = () => {
-    products.forEach((item) => {
-        product_name.push(item.food_name);
-    });
-    console.log(product_name);
-    invoice.forEach(item => {
-        quantity.push(...item.shopping_cart.map(cartItem => {
-            // console.log(cartItem);
-            if (product_name.includes(cartItem.food_name)) {
-                totalQuantity += cartItem.quantity;
-            }
-        }));
-    });
-    console.log(quantity);
+  products.forEach((item) => {
+    product_name.push(item.food_name);
+    quantityPerFood[item.food_name] = 0;
+  });
+  // console.log(product_name);
 
-//   new Chart("myStatistic", {
-//     type: "bar",
-//     data: {
-//       labels: product_name,
-//       datasets: [
-//         {
-//           backgroundColor: barColors,
-//           data: yValues,
-//         },
-//       ],
-//     },
-//     options: {
-//       legend: { display: false },
-//       title: {
-//         display: true,
-//       },
-//     },
-//   });
+  invoice.forEach((item) => {
+    item.shopping_cart.forEach((cartItem) => {
+      const { food_name, quantity } = cartItem;
+      quantityPerFood[food_name] += quantity;
+    });
+  });
+
+  // Convert the object to an array
+  quantity = Object.values(quantityPerFood);
+  // console.log(quantity);
+
+  for (let i = 0; i < product_name.length; i++) {
+    barColors.push(
+      `rgb(${Math.floor(Math.random() * 255)}, 
+        ${Math.floor(Math.random() * 255)}, 
+        ${Math.floor(Math.random() * 255)})`
+    );
+  }
+  // console.log(barColors);
+
+  new Chart("myStatistic", {
+    type: "bar",
+    data: {
+      labels: product_name,
+      datasets: [
+        {
+          backgroundColor: barColors,
+          data: quantity,
+        },
+      ],
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: "Total Sale of Healthy Foods Store",
+      },
+    },
+  });
 };
 
 const getInvoice = () => {
