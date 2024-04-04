@@ -1,125 +1,129 @@
-let manageLists = document.querySelector(".tm-manage");
-let foodName = document.querySelector("#foodName");
-let priceEle = document.querySelector("#price");
-let description = document.querySelector("#description");
-let image = document.querySelector("#image");
-let foodPic = document.querySelector("#food-pic");
+class Manage {
+  constructor() {
+    this.manageLists = document.querySelector(".tm-manage");
+    this.foodName = document.querySelector("#foodName");
+    this.priceEle = document.querySelector("#price");
+    this.description = document.querySelector("#description");
+    this.image = document.querySelector("#image");
+    this.foodPic = document.querySelector("#food-pic");
+    this.manage_url = "http://localhost:3000/food";
+    this.httpm = null;
+    this.products = [];
+    this.id = null;
+    this.data = {};
+    this.imageName = "";
 
-let manage_url = "http://localhost:3000/food";
-let httpm = null;
-let products = [];
-let id = null;
-let data = {};
-let imageName = "";
+    this.addEventListeners();
+    this.fetchProducts();
+  }
 
-function openModal() {
-  document.querySelector(".bg-modal").style.display = "block";
-}
-function closeModal() {
-  document.querySelector(".bg-modal").style.display = "none";
-}
+  addEventListeners() {
+    document.querySelector(".add").addEventListener("click", () => {
+      this.httpm = "POST";
+      this.clearForm();
+      this.openModal();
+    });
 
-document.querySelector(".add").addEventListener("click", function () {
-  httpm = "POST";
-  clearForm();
-  openModal();
-});
+    this.image.onchange = () => {
+      this.foodPic.src = URL.createObjectURL(this.image.files[0]);
+      this.imageName = this.image.files[0].name;
+    };
 
-image.onchange = function () {
-  foodPic.src = URL.createObjectURL(image.files[0]);
-  imageName = image.files[0].name;
-};
+    document.querySelector(".cancel").addEventListener("click", () => {
+      this.closeModal();
+    });
 
-function displayMenu() {
-  if (products.length > 0) {
-    for (let i = 0; i < products.length; i++) {
-      const item = products[i];
-      //   console.log(item);
-      const manageList = document.createElement("div");
-      manageList.dataset.id = item.id;
-      manageList.className = "tm-list-item tm-black-bg";
-      manageList.innerHTML = `
-            <img src="${item.image}" alt="Image" class="tm-list-item-img">
-            <div class="tm-list-item-text">
-                <h3 class="tm-list-item-name">${item.food_name}<span class="tm-list-item-price">$${item.price}</span></h3>
-                <p>${item.description}</p>
-                <button onclick="editFood(event)" class="add-cart">Edit</button>
-                <button onclick="deleteFood(event)" class="add-cart">Delete</button>
-            </div>
-                            `;
-      manageLists.appendChild(manageList);
+    document.querySelector(".save").addEventListener("click", () => {
+      this.data.food_name = this.foodName.value;
+      this.data.price = this.priceEle.value;
+      this.data.description = this.description.value;
+      this.data.image = `../public/img/${this.imageName}`;
+
+      if (this.httpm === "PUT" && this.id) {
+        this.manage_url += `/${this.id}`;
+      }
+
+      fetch(this.manage_url, {
+        method: this.httpm,
+        body: JSON.stringify(this.data),
+        headers: { "Content-type": "application/json" },
+      })
+        .then(() => {
+          this.clearForm();
+          this.closeModal();
+          window.location.reload();
+        })
+        .catch((error) => console.error("Error:", error));
+    });
+  }
+
+  openModal() {
+    document.querySelector(".bg-modal").style.display = "block";
+  }
+
+  closeModal() {
+    document.querySelector(".bg-modal").style.display = "none";
+  }
+
+  fetchProducts() {
+    fetch(this.manage_url)
+      .then((response) => response.json())
+      .then((data) => {
+        this.products = data;
+        this.displayMenu();
+      })
+      .catch((error) => console.error("Error fetching JSON:", error));
+  }
+
+  displayMenu() {
+    if (this.products.length > 0) {
+      for (let i = 0; i < this.products.length; i++) {
+        const item = this.products[i];
+        const manageList = document.createElement("div");
+        manageList.dataset.id = item.id;
+        manageList.className = "tm-list-item tm-black-bg";
+        manageList.innerHTML = `
+          <img src="${item.image}" alt="Image" class="tm-list-item-img">
+          <div class="tm-list-item-text">
+              <h3 class="tm-list-item-name">${item.food_name}<span class="tm-list-item-price">$${item.price}</span></h3>
+              <p>${item.description}</p>
+              <button onclick="manage.editFood(event)" class="add-cart">Edit</button>
+              <button onclick="manage.deleteFood(event)" class="add-cart">Delete</button>
+          </div>
+        `;
+        this.manageLists.appendChild(manageList);
+      }
     }
   }
-}
 
-document.querySelector(".cancel").addEventListener("click", function () {
-  closeModal();
-});
-
-document.querySelector(".save").addEventListener("click", function () {
-  data.food_name = foodName.value;
-  data.price = priceEle.value;
-  data.description = description.value;
-  data.image = `../public/img/${imageName}`;
-  // console.log(foodName.value);
-  if (httpm === "PUT" && id) {
-    manage_url += `/${id}`; // Append the ID to the URL for PUT requests
+  clearForm() {
+    this.foodName.value = null;
+    this.priceEle.value = null;
+    this.description.value = null;
+    this.image.value = null;
   }
 
-  fetch(manage_url, {
-    method: httpm,
-    body: JSON.stringify(data),
-    headers: { "Content-type": "application/json" },
-  })
-    .then(() => {
-      clearForm();
-      closeModal();
+  editFood(e) {
+    this.openModal();
+    this.httpm = "PUT";
+    this.id = e.target.closest(".tm-list-item").dataset.id;
+    let selectedFood = this.products.find((m) => m.id == this.id);
+    if (selectedFood) {
+      this.foodName.value = selectedFood.food_name;
+      this.priceEle.value = selectedFood.price;
+      this.description.value = selectedFood.description;
+      this.foodPic.src = selectedFood.image;
+      this.imageName = selectedFood.image.split("/").pop();
+    }
+  }
+
+  deleteFood(e) {
+    this.id = e.target.parentElement.parentElement.dataset.id;
+    fetch(this.manage_url + "/" + this.id, { method: "DELETE" }).then(() => {
       window.location.reload();
-    })
-    .catch((error) => console.error("Error:", error));
-});
-
-function clearForm() {
-  foodName.value = null;
-  priceEle.value = null;
-  description.value = null;
-  image.value = null;
-}
-
-function editFood(e) {
-  openModal();
-  httpm = "PUT";
-  id = e.target.closest(".tm-list-item").dataset.id; // Improved target selection
-  let selectedFood = products.find((m) => m.id == id); // Simplified to use .find
-  console.log(selectedFood);
-  if (selectedFood) {
-    // Check if selectedFood is not undefined
-    foodName.value = selectedFood.food_name;
-    priceEle.value = selectedFood.price;
-    description.value = selectedFood.description;
-    foodPic.src = selectedFood.image;
-    imageName = selectedFood.image.split("/").pop(); // Extract imageName from the image path
-    console.log(imageName);
+    });
   }
 }
 
-function deleteFood(e) {
-  console.log(e.target.parentElement.parentElement.dataset.id);
-  id = e.target.parentElement.parentElement.dataset.id;
-  fetch(menu_url + "/" + id, { method: "DELETE" }).then(() => {
-    window.location.reload();
-  });
-}
-
-const manageProduct = () => {
-  // get data product
-  fetch(manage_url)
-    .then((response) => response.json())
-    .then((data) => {
-      products = data;
-      //   console.log(products);
-      displayMenu();
-    })
-    .catch((error) => console.error("Error fetching JSON:", error));
-};
-manageProduct();
+// Usage
+const manage = new Manage();

@@ -1,71 +1,77 @@
-let quantity = [];
-let product_name = [];
-let barColors = [];
-let quantityPerFood = {};
+class Statistic {
+  constructor() {
+    this.quantity = [];
+    this.product_name = [];
+    this.barColors = [];
+    this.quantityPerFood = {};
+    this.chartElement = document.getElementById("myStatistic");
 
-const displayStatistic = () => {
-  products.forEach((item) => {
-    product_name.push(item.food_name);
-    quantityPerFood[item.food_name] = 0;
-  });
-  // console.log(product_name);
+    this.getInvoice();
+  }
 
-  invoice.forEach((item) => {
-    item.shopping_cart.forEach((cartItem) => {
-      const { food_name, quantity } = cartItem;
-      quantityPerFood[food_name] += quantity;
+  displayStatistic() {
+    this.products.forEach((item) => {
+      this.product_name.push(item.food_name);
+      this.quantityPerFood[item.food_name] = 0;
     });
-  });
 
-  // Convert the object to an array
-  quantity = Object.values(quantityPerFood);
-  // console.log(quantity);
+    this.invoice.forEach((item) => {
+      item.shopping_cart.forEach((cartItem) => {
+        const { food_name, quantity } = cartItem;
+        this.quantityPerFood[food_name] += quantity;
+      });
+    });
 
-  for (let i = 0; i < product_name.length; i++) {
-    barColors.push(
-      `rgb(${Math.floor(Math.random() * 255)}, 
+    this.quantity = Object.values(this.quantityPerFood);
+
+    for (let i = 0; i < this.product_name.length; i++) {
+      this.barColors.push(
+        `rgb(${Math.floor(Math.random() * 255)}, 
         ${Math.floor(Math.random() * 255)}, 
         ${Math.floor(Math.random() * 255)})`
-    );
-  }
-  // console.log(barColors);
+      );
+    }
 
-  new Chart("myStatistic", {
-    type: "bar",
-    data: {
-      labels: product_name,
-      datasets: [
-        {
-          backgroundColor: barColors,
-          data: quantity,
-        },
-      ],
-    },
-    options: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: "Total Sale of Healthy Foods Store",
+    new Chart(this.chartElement, {
+      type: "bar",
+      data: {
+        labels: this.product_name,
+        datasets: [
+          {
+            backgroundColor: this.barColors,
+            data: this.quantity,
+          },
+        ],
       },
-    },
-  });
-};
-
-const getInvoice = () => {
-  const fetch1 = fetch("http://localhost:3000/invoice").then((response) =>
-    response.json()
-  );
-  const fetch2 = fetch("http://localhost:3000/food").then((response) =>
-    response.json()
-  );
-  Promise.all([fetch1, fetch2])
-    .then(([data1, data2]) => {
-      invoice = data1;
-      products = data2;
-      displayStatistic();
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: "Total Sale of Healthy Foods Store",
+        },
+      },
     });
-};
-getInvoice();
+  }
+
+  getInvoice() {
+    const fetch1 = fetch("http://localhost:3000/invoice").then((response) =>
+      response.json()
+    );
+    const fetch2 = fetch("http://localhost:3000/food").then((response) =>
+      response.json()
+    );
+
+    Promise.all([fetch1, fetch2])
+      .then(([data1, data2]) => {
+        this.invoice = data1;
+        this.products = data2;
+        this.displayStatistic();
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }
+}
+
+// Usage
+const statistic = new Statistic();

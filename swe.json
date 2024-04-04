@@ -1,13 +1,6 @@
 {
   "food": [
     {
-      "food_name": "cusorr",
-      "price": "29",
-      "description": "Delicious and savory pasta dish with a creamy sauce",
-      "image": "../public/img/special-02.jpg",
-      "id": "1"
-    },
-    {
       "id": "2",
       "food_name": "pasta",
       "description": "Cheesy and gooey pizza with all your favorite toppings",
@@ -160,6 +153,22 @@
         {
           "food_name": "burger",
           "price": "22.50",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "0f4f",
+      "name": "DuySeu",
+      "address": "111",
+      "number": "222",
+      "email": "nguyenquocduy0207@gmail.com",
+      "postcode": "1111",
+      "timestamp": "04/04/2024",
+      "shopping_cart": [
+        {
+          "food_name": "pasta",
+          "price": "28",
           "quantity": 1
         }
       ]
