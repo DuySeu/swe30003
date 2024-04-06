@@ -1,53 +1,74 @@
 {
   "food": [
     {
-      "id": "2",
-      "food_name": "pasta",
-      "description": "Cheesy and gooey pizza with all your favorite toppings",
-      "price": "28",
-      "image": "../public/img/iced-americano.png"
+      "id": 1,
+      "food_name": "quinoa salad",
+      "price": 2.5,
+      "description": "A crunchy apple packed with vitamins and fiber",
+      "image": "public/img/quinoa salad.jpg"
     },
     {
-      "food_name": "sandwich",
-      "price": "50",
-      "description": "Fluffy and light pancakes drizzled with maple syrup",
-      "image": "../public/img/special-06.jpg",
-      "id": "5"
+      "id": 2,
+      "food_name": "kale smoothie",
+      "price": 3.75,
+      "description": "A refreshing cucumber perfect for salads",
+      "image": "public/img/kale smoothie.jpg"
     },
     {
-      "food_name": "ice-latte",
-      "price": "42.25",
-      "description": "Juicy and tender steak cooked to perfection",
-      "image": "../public/img/iced-latte.png",
-      "id": "6"
+      "id": 3,
+      "food_name": "avocado toast",
+      "price": 1.99,
+      "description": "A juicy orange full of vitamin C",
+      "image": "public/img/avocado toast.jpg"
     },
     {
-      "food_name": "ramen",
-      "price": "18.25",
-      "description": "Zesty and flavorful tacos with all the toppings",
-      "image": "../public/img/special-05.jpg",
-      "id": "7"
+      "id": 4,
+      "food_name": "sweet potato bowl",
+      "price": 4.25,
+      "description": "A colorful mixed berry salad bursting with antioxidants",
+      "image": "public/img/sweet potato bowl.jpg"
     },
     {
-      "food_name": "burger",
-      "price": "22.50",
-      "description": "Rich and decadent chocolate cake with a velvety frosting",
-      "image": "../public/img/special-03.jpg",
-      "id": "8"
+      "id": 5,
+      "food_name": "chia pudding",
+      "price": 2.1,
+      "description": "A creamy avocado rich in healthy fats",
+      "image": "public/img/chia pudding.jpg"
     },
     {
-      "food_name": "coffee",
-      "price": "19",
-      "description": "Delicious and savory pasta dish with a creamy sauce",
-      "image": "../public/img/hot-americano.png",
-      "id": "9"
+      "id": 6,
+      "food_name": "spinach wrap",
+      "price": 3.5,
+      "description": "A crunchy carrot great for snacking",
+      "image": "public/img/spinach wrap.webp"
     },
     {
-      "food_name": "Latte",
-      "price": "4",
-      "description": "delicous",
-      "image": "../public/img/hot-latte.png",
-      "id": "90fb"
+      "id": 7,
+      "food_name": "acai bowl",
+      "price": 2.75,
+      "description": "A leafy green spinach loaded with iron",
+      "image": "public/img/acai bowl.jpg"
+    },
+    {
+      "id": 8,
+      "food_name": "turmeric latte",
+      "price": 5,
+      "description": "A sweet pineapple full of vitamin C",
+      "image": "public/img/turmeric latte.jpg"
+    },
+    {
+      "id": 9,
+      "food_name": "cauliflower rice",
+      "price": 1.5,
+      "description": "A protein-packed quinoa salad with veggies",
+      "image": "public/img/cauliflower rice.jpg"
+    },
+    {
+      "id": 10,
+      "food_name": "zucchini noodles",
+      "price": 3,
+      "description": "A delicious and nutritious smoothie made with kale and berries",
+      "image": "public/img/zucchini noodles.jpg"
     }
   ],
   "account": [
@@ -80,96 +101,127 @@
   ],
   "invoice": [
     {
-      "id": "1",
-      "name": "DuySeu",
-      "address": "test",
-      "number": "09123123123",
-      "email": "kk@gmail.com",
-      "postcode": "1111",
-      "timestamp": "04/04/2024",
+      "id": 1,
+      "name": "Stella Denham",
+      "address": "PO Box 97681",
+      "email": "sdenham0@cargocollective.com",
+      "postcode": 98765,
+      "timestamp": "06/01/2024",
       "shopping_cart": [
         {
-          "food_name": "cusorr",
-          "price": "29",
+          "food_name": "quinoa salad",
+          "price": "2.5",
+          "quantity": 3
+        },
+        {
+          "food_name": "acai bowl",
+          "price": "2.25",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sianna Pembridge",
+      "address": "17th Floor",
+      "email": "spembridge1@walmart.com",
+      "postcode": 99999,
+      "timestamp": "13/01/2024",
+      "shopping_cart": [
+        {
+          "food_name": "turmeric latte",
+          "price": "5",
+          "quantity": 4
+        },
+        {
+          "food_name": "acai bowl",
+          "price": "2.75",
           "quantity": 2
         },
         {
-          "food_name": "sandwich",
-          "price": "50",
-          "quantity": 1
+          "food_name": "zucchini noodles",
+          "price": "3",
+          "quantity": 3
         },
         {
-          "food_name": "burger",
-          "price": "22.50",
+          "food_name": "spinach wrap",
+          "price": "3.5",
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cathie Symes",
+      "address": "Apt 1772",
+      "email": "csymes2@prweb.com",
+      "postcode": 99999,
+      "timestamp": "09/02/2024",
+      "shopping_cart": [
+        {
+          "food_name": "acai bowl",
+          "price": "2.75",
           "quantity": 1
         }
       ]
     },
     {
-      "id": "2",
-      "name": "DuySeu",
-      "address": "test",
-      "number": "09123123123",
-      "email": "kk@gmail.com",
-      "postcode": "1111",
-      "timestamp": "04/04/2024",
+      "id": 4,
+      "name": "Luce Parkhouse",
+      "address": "Suite 97",
+      "email": "lparkhouse3@liveinternet.ru",
+      "postcode": 13579,
+      "timestamp": "25/03/2024",
       "shopping_cart": [
         {
-          "food_name": "cusorr",
-          "price": "29",
+          "food_name": "chia pudding",
+          "price": "2.1",
+          "quantity": 1
+        },
+        {
+          "food_name": "spinach wrap",
+          "price": "3.5",
           "quantity": 2
-        },
-        {
-          "food_name": "sandwich",
-          "price": "50",
-          "quantity": 1
-        },
-        {
-          "food_name": "burger",
-          "price": "22.50",
-          "quantity": 1
         }
       ]
     },
     {
-      "id": "2cc5",
-      "name": "DuySeu",
-      "address": "test",
-      "number": "09123123123",
-      "email": "kk@gmail.com",
-      "postcode": "1111",
-      "timestamp": "04/04/2024",
+      "id": 5,
+      "name": "Paloma Dunbobbin",
+      "address": "PO Box 37787",
+      "email": "pdunbobbin4@pagesperso-orange.fr",
+      "postcode": 24680,
+      "timestamp": "15/01/2024",
       "shopping_cart": [
         {
-          "food_name": "cusorr",
-          "price": "29",
-          "quantity": 2
+          "food_name": "turmeric latte",
+          "price": "5",
+          "quantity": 4
         },
         {
-          "food_name": "sandwich",
-          "price": "50",
-          "quantity": 1
-        },
-        {
-          "food_name": "burger",
-          "price": "22.50",
-          "quantity": 1
+          "food_name": "avocado toast",
+          "price": "1.99",
+          "quantity": 5
         }
       ]
     },
     {
-      "id": "0f4f",
-      "name": "DuySeu",
-      "address": "111",
-      "number": "222",
-      "email": "nguyenquocduy0207@gmail.com",
-      "postcode": "1111",
-      "timestamp": "04/04/2024",
+      "id": 6,
+      "name": "Marco Nelligan",
+      "address": "PO Box 10489",
+      "email": "mnelligan5@toplist.cz",
+      "postcode": 54321,
+      "timestamp": "06/02/2024",
       "shopping_cart": [
         {
-          "food_name": "pasta",
-          "price": "28",
+          "food_name": "quinoa salad",
+          "price": "2.5",
           "quantity": 1
+        },
+        {
+          "food_name": "chia pudding",
+          "price": "2.1",
+          "quantity": 2
         }
       ]
     }

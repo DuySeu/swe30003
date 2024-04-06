@@ -1,7 +1,5 @@
-# swe30003
+# swe30003 - Group 5
 # All Your Healthy Foods
-# pull code: 
-git pull
 # run json server: 
 npx json-server --watch swe.json
 # run web: 

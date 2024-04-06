@@ -37,7 +37,7 @@ class Manage {
       this.data.food_name = this.foodName.value;
       this.data.price = this.priceEle.value;
       this.data.description = this.description.value;
-      this.data.image = `../public/img/${this.imageName}`;
+      this.data.image = `public/img/${this.imageName}`;
 
       if (this.httpm === "PUT" && this.id) {
         this.manage_url += `/${this.id}`;
@@ -83,7 +83,7 @@ class Manage {
         manageList.dataset.id = item.id;
         manageList.className = "tm-list-item tm-black-bg";
         manageList.innerHTML = `
-          <img src="${item.image}" alt="Image" class="tm-list-item-img">
+          <img src="../${item.image}" alt="Image" class="tm-list-item-img">
           <div class="tm-list-item-text">
               <h3 class="tm-list-item-name">${item.food_name}<span class="tm-list-item-price">$${item.price}</span></h3>
               <p>${item.description}</p>

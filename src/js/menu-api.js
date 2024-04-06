@@ -39,7 +39,7 @@ class MenuAPI {
         foodList.dataset.id = item.id;
         foodList.className = "tm-list-item tm-black-bg";
         foodList.innerHTML = `
-          <img src="${item.image}" alt="Image" class="tm-list-item-img">
+          <img src="../${item.image}" alt="Image" class="tm-list-item-img">
           <div class="tm-list-item-text">
             <h3 class="tm-list-item-name">${item.food_name}<span class="tm-list-item-price">$${item.price}</span></h3>
             <p>${item.description}</p>
