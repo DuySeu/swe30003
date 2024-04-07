@@ -27,6 +27,7 @@ class Manage {
     this.image.onchange = () => {
       this.foodPic.src = URL.createObjectURL(this.image.files[0]);
       this.imageName = this.image.files[0].name;
+    // console.log(this.imageName);
     };
 
     document.querySelector(".cancel").addEventListener("click", () => {
@@ -112,8 +113,9 @@ class Manage {
       this.foodName.value = selectedFood.food_name;
       this.priceEle.value = selectedFood.price;
       this.description.value = selectedFood.description;
-      this.foodPic.src = selectedFood.image;
+      this.foodPic.src = `../${selectedFood.image}`;
       this.imageName = selectedFood.image.split("/").pop();
+      // console.log(selectedFood.image.split("/").pop());
     }
   }
 

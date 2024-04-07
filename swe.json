@@ -1,70 +1,70 @@
 {
   "food": [
     {
-      "id": 1,
       "food_name": "quinoa salad",
-      "price": 2.5,
+      "price": "3.5",
       "description": "A crunchy apple packed with vitamins and fiber",
-      "image": "public/img/quinoa salad.jpg"
+      "image": "public/img/quinoa salad.jpg",
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "food_name": "kale smoothie",
       "price": 3.75,
       "description": "A refreshing cucumber perfect for salads",
       "image": "public/img/kale smoothie.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "food_name": "avocado toast",
       "price": 1.99,
       "description": "A juicy orange full of vitamin C",
       "image": "public/img/avocado toast.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "food_name": "sweet potato bowl",
       "price": 4.25,
       "description": "A colorful mixed berry salad bursting with antioxidants",
       "image": "public/img/sweet potato bowl.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "food_name": "chia pudding",
       "price": 2.1,
       "description": "A creamy avocado rich in healthy fats",
       "image": "public/img/chia pudding.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "food_name": "spinach wrap",
       "price": 3.5,
       "description": "A crunchy carrot great for snacking",
       "image": "public/img/spinach wrap.webp"
     },
     {
-      "id": 7,
+      "id": "7",
       "food_name": "acai bowl",
       "price": 2.75,
       "description": "A leafy green spinach loaded with iron",
       "image": "public/img/acai bowl.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "food_name": "turmeric latte",
       "price": 5,
       "description": "A sweet pineapple full of vitamin C",
       "image": "public/img/turmeric latte.jpg"
     },
     {
-      "id": 9,
+      "id": "9",
       "food_name": "cauliflower rice",
       "price": 1.5,
       "description": "A protein-packed quinoa salad with veggies",
       "image": "public/img/cauliflower rice.jpg"
     },
     {
-      "id": 10,
+      "id": "10",
       "food_name": "zucchini noodles",
       "price": 3,
       "description": "A delicious and nutritious smoothie made with kale and berries",
@@ -101,7 +101,7 @@
   ],
   "invoice": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Stella Denham",
       "address": "PO Box 97681",
       "email": "sdenham0@cargocollective.com",
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Sianna Pembridge",
       "address": "17th Floor",
       "email": "spembridge1@walmart.com",
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Cathie Symes",
       "address": "Apt 1772",
       "email": "csymes2@prweb.com",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Luce Parkhouse",
       "address": "Suite 97",
       "email": "lparkhouse3@liveinternet.ru",
@@ -186,7 +186,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Paloma Dunbobbin",
       "address": "PO Box 37787",
       "email": "pdunbobbin4@pagesperso-orange.fr",
@@ -206,7 +206,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Marco Nelligan",
       "address": "PO Box 10489",
       "email": "mnelligan5@toplist.cz",
@@ -222,6 +222,37 @@
           "food_name": "chia pudding",
           "price": "2.1",
           "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "5c05",
+      "name": "Nguyen Quoc Duy",
+      "address": "Gleximco Ha Dong",
+      "number": "0941920239",
+      "email": "nguyenquocduy0207@gmail.com",
+      "postcode": "1000",
+      "timestamp": "07/04/2024",
+      "shopping_cart": [
+        {
+          "food_name": "quinoa salad",
+          "price": "3.5",
+          "quantity": 1
+        },
+        {
+          "food_name": "kale smoothie",
+          "price": 3.75,
+          "quantity": 1
+        },
+        {
+          "food_name": "avocado toast",
+          "price": 1.99,
+          "quantity": 1
+        },
+        {
+          "food_name": "sweet potato bowl",
+          "price": 4.25,
+          "quantity": 1
         }
       ]
     }
